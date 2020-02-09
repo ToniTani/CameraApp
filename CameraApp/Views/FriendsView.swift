@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct FriendsView: Identifiable {
+struct Friend: Identifiable {
     var id:UUID = UUID()
     var name: String
     var mutualFriends:Int
