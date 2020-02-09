@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FriendLineView: View {
     var friend:Friend
+    
         var body: some View {
             NavigationLink(destination: FriendDetailsView(friend: friend)) {
                 HStack {
