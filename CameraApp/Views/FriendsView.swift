@@ -8,14 +8,40 @@
 
 import SwiftUI
 
-struct FriendsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct FriendsView: Identifiable {
+    var id:UUID = UUID()
+    var name: String
+    var mutualFriends:Int
+    var avatar: String
+    var poster: String
 }
 
+var friends:[Friend] = [
+Friend(name: "Kikka D.", mutualFriends: 350, avatar: "cristina", poster: "alps"),
+Friend(name: "Topi G.", mutualFriends: 1, avatar: "david", poster: "sanfransisco"),
+Friend(name: "Juhantalo B.", mutualFriends: 22, avatar: "robert", poster: "london"),
+Friend(name: "Mixa A.", mutualFriends: 10, avatar: "ruxi", poster: "paris"),
+Friend(name: "Paavo B.", mutualFriends: 2, avatar: "george", poster: "newyork"),
+]
+
+
+struct FriendsView: View {
+    
+    
+    
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                ForEach(friends, id: \.id) { friend in
+                    FriendRow(friend: friend).padding()
+                }.navigationBarTitle("Friends")
+            }
+        }
+    }
+}
 struct FriendsView_Previews: PreviewProvider {
     static var previews: some View {
         FriendsView()
     }
 }
+
