@@ -17,11 +17,11 @@ struct FriendsView: Identifiable {
 }
 
 var friends:[Friend] = [
-Friend(name: "Kikka D.", mutualFriends: 350, avatar: "cristina", poster: "alps"),
-Friend(name: "Topi G.", mutualFriends: 1, avatar: "david", poster: "sanfransisco"),
-Friend(name: "Juhantalo B.", mutualFriends: 22, avatar: "robert", poster: "london"),
-Friend(name: "Mixa A.", mutualFriends: 10, avatar: "ruxi", poster: "paris"),
-Friend(name: "Paavo B.", mutualFriends: 2, avatar: "george", poster: "newyork"),
+    Friend(name: "Kristina D.", mutualFriends: 350, avatar: "cristina", poster: "alps"),
+    Friend(name: "David G.", mutualFriends: 1, avatar: "david", poster: "sanfransisco"),
+    Friend(name: "Robert B.", mutualFriends: 22, avatar: "robert", poster: "london"),
+    Friend(name: "Ruxi A.", mutualFriends: 10, avatar: "ruxi", poster: "paris"),
+    Friend(name: "George B.", mutualFriends: 2, avatar: "george", poster: "newyork"),
 ]
 
 
@@ -33,7 +33,7 @@ struct FriendsView: View {
         NavigationView {
             ScrollView {
                 ForEach(friends, id: \.id) { friend in
-                    FriendRow(friend: friend).padding()
+                    FriendLineView(friend: friend).padding()
                 }.navigationBarTitle("Friends")
             }
         }
